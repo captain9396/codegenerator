@@ -1,0 +1,106 @@
+
+*****************************************
+*********  SOLUTION  PROCEDURE  *********
+*****************************************
+
+
+
+# DAG_Node Class: 
+-----------------
+
+There are three fields in this class: label, lChild and rChild.
+I have created an extra field in this class - tempLabel. This field 
+contains the name of the corresponding temporary variable associated 
+with a non-leaf node of the DAG.
+
+First I have created the necessary getter and setter methods. Then 
+operator-overloading is done to enhance the compatibility of this 
+class when used with STL map.
+
+
+
+# constructNode(label,l,r)  Function Implementation:
+----------------------------------------------------
+
+I have created a DAG_Node instance in this function with label, l, r. Then I 
+checked if there was any node having similar attributes in a previously 
+created STL map 'node_table'. The 'node_table' map has 'DAG_Node' class as key
+and 'int' as its value. For getting this job done, I have overloaded the '=='
+and '<' operator for 'DAG_Node' class so that this class can be used as a key
+in any STL map.
+
+Now, if the node exists then the value of the dag_node is returned.
+And if it is not there, then the value is returned after creating a dag_node 
+having the received attributes (label,l,r) and inserting it in the array 'dag_array[]'.
+
+
+
+# print_dag_array()  Function Implementation:
+---------------------------------------------
+This simply prints the contents of the array 'dag_array'.
+
+
+
+# topological_sort()  Function Implementation:
+---------------------------------------------
+The non-leaf nodes of the DAG are topologically sorted using this 
+function. I have used Depth-First-Search approach to do the sorting.
+
+
+
+
+# construct_tac()  Function Implementation:
+-------------------------------------------
+At first, the non-leaf nodes i.e. the nodes describing an operation(+,-,*,/)
+are sorted using the 'topological_sort()' function. Then the exact TAC 
+is generated with the order found by the sorting function. Each line 
+constitutes a three-address-code. The TACs are thereby output in the 
+"output.txt" file.
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------           x          --------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
